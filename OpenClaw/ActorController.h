@@ -14,6 +14,9 @@ public:
     void OnUpdate(uint32 msDiff);
     void HandleAction(ActionType actionType);
 
+    // Custom touch overlay
+    void OnCustomOverlayAction(int action, bool pressed, float x, float y);
+
     // Interface
     bool VOnKeyDown(SDL_Keycode key);
     bool VOnKeyUp(SDL_Keycode key);
@@ -33,6 +36,10 @@ private:
 
     shared_ptr<SceneNode> m_pControlledObject;
     float m_Speed;
+
+    // Touch overlay movement
+    float m_OverlayMoveX = 0.0f;
+    float m_OverlayMoveY = 0.0f;
 
     std::map<int, bool> m_InputKeys;
 
